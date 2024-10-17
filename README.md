@@ -9,7 +9,7 @@ Chạy các lệnh sau để cài đặt các gói cần thiết:
 sudo apt update
 sudo apt install git build-essential libtool libpcre3-dev libssl-dev zlib1g-dev wget
 ```
-##Bước 2: Tải và cài đặt ModSecurity
+## Bước 2: Tải và cài đặt ModSecurity
 Clone ModSecurity từ GitHub:
 ```bash
 
@@ -26,12 +26,12 @@ Xây dựng và cài đặt ModSecurity:
 make
 sudo make install
 ```
-##Bước 3: Tải và cài đặt ModSecurity Nginx Connector
+## Bước 3: Tải và cài đặt ModSecurity Nginx Connector
 Clone ModSecurity-nginx từ GitHub:
 ```bash
 git clone https://github.com/owasp-modsecurity/ModSecurity-nginx
 ```
-##Bước 4: Tải và biên dịch phiên bản Nginx phù hợp với ModSecurity
+## Bước 4: Tải và biên dịch phiên bản Nginx phù hợp với ModSecurity
 ```bash
 nginx -v
 ```
@@ -51,7 +51,7 @@ Biên dịch và cài đặt Nginx:
 make
 sudo make install
 ```
-##Bước 5: Cấu hình Nginx để sử dụng ModSecurity
+## Bước 5: Cấu hình Nginx để sử dụng ModSecurity
 Chỉnh sửa tệp cấu hình Nginx (/etc/nginx/nginx.conf).
 Mở file cấu hình:
 ```bash

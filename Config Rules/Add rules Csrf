@@ -1,1 +1,84 @@
+## Quy Tắc CSRF Cơ Bản
 
+1. Phát hiện CSRF bằng cách kiểm tra các yêu cầu POST mà không có CSRF token
+
+SecRule REQUEST_METHOD "^(POST|PUT|DELETE)$" \
+    "id:3001,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'CSRF attack detected, missing CSRF token'"
+
+2. Kiểm tra CSRF token trong tham số đầu vào
+
+SecRule ARGS:csrf_token "!@streq {YOUR_CSRF_TOKEN_HERE}" \
+    "id:3002,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Invalid CSRF token detected'"
+
+## Quy Tắc CSRF Nâng Cao
+
+1. Kiểm tra HTTP Referer Header
+
+SecRule REQUEST_HEADERS:Referer "!@streq http://yourdomain.com/" \
+    "id:3003,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential CSRF attack detected, invalid referer'"
+
+2. Phát hiện các yêu cầu không hợp lệ mà không có CSRF token cho các hành động nhạy cảm
+
+SecRule REQUEST_METHOD "^(POST|PUT|DELETE)$" \
+    "id:3004,\
+    phase:2,\
+    chain,\
+    t:none"
+
+SecRule ARGS:csrf_token "!@rx ^[a-zA-Z0-9]{32}$" \
+    "deny,\
+    log,\
+    status:403,\
+    msg:'CSRF attack detected, invalid CSRF token format'"
+
+3. Giới hạn hành động nhạy cảm chỉ cho phép từ nguồn hợp lệ
+
+SecRule REQUEST_METHOD "^(POST)$" \
+    "id:3005,\
+    phase:2,\
+    chain,\
+    t:none"
+SecRule REQUEST_HEADERS:Origin "!@streq http://yourdomain.com" \
+    "deny,\
+    log,\
+    status:403,\
+    msg:'CSRF attack detected, invalid origin'"
+
+4. Kiểm tra CSRF token có trong cookie
+
+SecRule REQUEST_COOKIES:csrf_token "!@streq {YOUR_CSRF_TOKEN_HERE}" \
+    "id:3006,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Invalid CSRF token in cookie detected'"
+
+5. Theo dõi và ghi nhận các yêu cầu bất thường
+
+SecRule REQUEST_METHOD "^(POST|PUT|DELETE)$" \
+    "id:3007,\
+    phase:2,\
+    log,\
+    msg:'Potential CSRF attack detected on method: %{REQUEST_METHOD}'"
+
+Hướng dẫn sử dụng quy tắc
+-  Thay thế {YOUR_CSRF_TOKEN_HERE}: Bạn cần thay thế các giá trị {YOUR_CSRF_TOKEN_HERE} với token CSRF thực tế mà bạn đã tạo và sử dụng trong ứng dụng của mình.
+-  Thêm quy tắc vào file cấu hình: Các quy tắc này nên được thêm vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự.
+-  Kiểm tra quy tắc: Sau khi thêm quy tắc, hãy kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra lỗi không mong muốn trong ứng dụng của bạn.
+-  Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.

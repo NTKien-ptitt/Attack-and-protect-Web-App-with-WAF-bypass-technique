@@ -1,0 +1,78 @@
+## Quy Tắc LFI Cơ Bản
+
+1. hát hiện Local File Inclusion với dấu ../
+
+SecRule ARGS:page "(@contains ../)" \
+    "id:4001,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'LFI attempt detected - use of ../'"
+
+2. Phát hiện các yêu cầu đến file nhạy cảm cụ thể
+
+SecRule ARGS:page "@streq /etc/passwd" \
+    "id:4002,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'LFI attempt detected - access to /etc/passwd'"
+
+3. Phát hiện các file với phần mở rộng nhạy cảm
+
+SecRule ARGS:page "(@rx \.(php|ini|conf|log|txt)$)" \
+    "id:4003,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'LFI attempt detected - access to sensitive file extensions'"
+
+##Quy Tắc LFI Nâng Cao
+
+1. Phát hiện các chuỗi có dấu .. và ký tự không hợp lệ
+
+SecRule ARGS:page "(@rx \.\./|%2e%2e/)" \
+    "id:4004,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'LFI attempt detected - potential directory traversal'"
+
+2. Phát hiện các yêu cầu đến file nhạy cảm trong các thư mục khác nhau
+
+SecRule ARGS:page "(@rx ^(\/etc|\/var|\/home|\/root|\/usr)\/)" \
+    "id:4005,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'LFI attempt detected - access to sensitive directories'"
+
+3. Phát hiện file bao gồm có mã độc hoặc mã nguy hiểm
+
+SecRule ARGS:page "(@rx \.(php|pl|py|sh|cgi|asp|jsp|htaccess)$)" \
+    "id:4006,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'LFI attempt detected - dangerous file extension included'"
+
+4. Phát hiện các tham số chứa chuỗi bất thường có thể dẫn đến LFI
+
+SecRule ARGS ".*\.\./.*" \
+    "id:4007,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'LFI attempt detected - suspicious parameter content'"
+
+Hướng dẫn sử dụng quy tắc
+-  Thêm quy tắc vào file cấu hình: Bạn có thể thêm các quy tắc này vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự.
+-  Kiểm tra quy tắc: Sau khi thêm quy tắc, hãy đảm bảo kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra các lỗi không mong muốn trong ứng dụng của bạn.
+-  Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.

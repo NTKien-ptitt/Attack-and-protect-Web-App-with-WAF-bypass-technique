@@ -1,0 +1,87 @@
+## Quy Tắc URL Cơ Bản
+
+1. Phát hiện URL có ký tự đặc biệt
+
+SecRule REQUEST_URI "[@!$&;`<>|*(){}[\]~^%]" \
+    "id:7001,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential attack detected - special characters in URL'"
+
+2. Phát hiện URL có dấu .. (directory traversal)
+
+SecRule REQUEST_URI "\.\." \
+    "id:7002,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential directory traversal detected in URL'"
+
+3. Phát hiện các URL dài bất thường
+
+SecRule REQUEST_URI "@length > 2048" \
+    "id:7003,\
+    phase:2,\
+    deny,\
+    log,\
+    status:414,\
+    msg:'Request-URI too long detected'"
+
+4. Phát hiện URL chứa các từ khóa nhạy cảm
+
+SecRule REQUEST_URI "(eval|base64_decode|system|exec|shell_exec)" \
+    "id:7004,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential code injection detected in URL'"
+
+## Quy Tắc URL Nâng Cao
+1. Phát hiện URL có mã hóa không hợp lệ (URL Encoding)
+
+SecRule REQUEST_URI ".*(%3C|%3E|%22|%27|%60).*" \
+    "id:7005,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential attack detected - invalid URL encoding'"
+
+2. Phát hiện các tham số query có chứa mã độc
+
+SecRule ARGS ".*(union.*select|select.*from|drop.*table).*" \
+    "id:7006,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential SQL Injection attempt detected in query parameters'"
+
+3. Phát hiện các tham số không hợp lệ trong URL
+
+SecRule ARGS ".*(cmd|exec|system|shell|sh|bash).*" \
+    "id:7007,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential shell command injection detected in URL parameters'"
+
+4.Phát hiện URL đến các file nhạy cảm
+
+SecRule REQUEST_URI ".*\.(php|pl|py|sh|jsp|asp|exe|dll)$" \
+    "id:7008,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential remote file access detected - sensitive file extension in URL'"
+
+Hướng dẫn sử dụng quy tắc
+-  Thêm quy tắc vào file cấu hình: Bạn có thể thêm các quy tắc này vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự.
+-  Kiểm tra quy tắc: Sau khi thêm quy tắc, hãy đảm bảo kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra các lỗi không mong muốn trong ứng dụng của bạn.
+-  Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.

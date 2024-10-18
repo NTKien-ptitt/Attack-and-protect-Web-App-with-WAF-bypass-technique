@@ -67,6 +67,11 @@ http {
     ...
 }
 ```
+Bật Rules trong file cấu hình /etc/nginx/modsec/main.conf
+```bash
+SecRuleEngine On
+```
+
 Kiểm tra cấu hình Nginx:
 ```bash
 sudo nginx -t

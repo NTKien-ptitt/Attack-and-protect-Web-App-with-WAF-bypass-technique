@@ -1,0 +1,88 @@
+## Quy Tắc RFI Cơ Bản
+
+1. Phát hiện Remote File Inclusion qua URL
+
+SecRule ARGS:url "@rx ^(http|https)://" \
+    "id:5001,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - inclusion of remote file'"
+
+2. Phát hiện các yêu cầu đến URL không hợp lệ
+
+SecRule ARGS:url "@rx ^(http|https)://[a-zA-Z0-9._-]+(\/.*)?$" \
+    "id:5002,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - invalid URL format'"
+
+3. Phát hiện các tham số chứa URL nhạy cảm
+
+SecRule ARGS ".*\.(php|pl|py|sh|cgi|asp|jsp|exe|dll).*" \
+    "id:5003,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - dangerous file extension included'"
+
+4. Phát hiện các tham số chứa dấu ..
+
+SecRule ARGS:url "(@rx \.\./)" \
+    "id:5004,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - potential directory traversal'"
+
+## Quy Tắc RFI Nâng Cao
+
+1. Phát hiện các yêu cầu đến file từ các nguồn không tin cậy
+
+SecRule ARGS:url "(@rx ^(http|https)://(malicious-domain.com|another-malicious-domain.com))" \
+    "id:5005,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - access from untrusted source'"
+
+2. Phát hiện yêu cầu có tham số GET không hợp lệ
+
+SecRule ARGS ".*\.(php|pl|py|sh|cgi|asp|jsp|dll).*" \
+    "id:5006,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - suspicious GET parameter'"
+
+3. Phát hiện yêu cầu đến file có ký tự không hợp lệ
+
+SecRule ARGS:url "(@rx [^\w\s\-\.\/])" \
+    "id:5007,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - invalid characters in URL'"
+
+4. Phát hiện các URL sử dụng encoding để ẩn tấn công
+
+SecRule ARGS:url "@contains %2E%2E" \
+    "id:5008,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'RFI attempt detected - encoded directory traversal'"
+
+Hướng dẫn sử dụng quy tắc
+-  Thêm quy tắc vào file cấu hình: Bạn có thể thêm các quy tắc này vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự.
+-  Kiểm tra quy tắc: Sau khi thêm quy tắc, hãy đảm bảo kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra các lỗi không mong muốn trong ứng dụng của bạn.
+-  Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.

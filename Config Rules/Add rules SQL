@@ -1,4 +1,4 @@
-## Phát hiện SQL Injection cơ bản
+1. Phát hiện SQL Injection cơ bản
 
 SecRule ARGS "@detectSQLi" \
     "id:1002,\
@@ -8,7 +8,7 @@ SecRule ARGS "@detectSQLi" \
     status:403,\
     msg:'SQL Injection attempt detected'"
 
-Phát hiện tham số chứa ký tự đặc biệt
+2. Phát hiện tham số chứa ký tự đặc biệt
 
 SecRule ARGS "(union|select|insert|update|delete|drop|--|#|;|')+" \
     "id:1003,\
@@ -17,7 +17,8 @@ SecRule ARGS "(union|select|insert|update|delete|drop|--|#|;|')+" \
     log,\
     status:403,\
     msg:'Potential SQL Injection detected'"
-Phát hiện tham số đầu vào có độ dài bất thường
+
+3. Phát hiện tham số đầu vào có độ dài bất thường
 
 SecRule ARGS "@length 100" \
     "id:1004,\
@@ -26,7 +27,8 @@ SecRule ARGS "@length 100" \
     log,\
     status:403,\
     msg:'Input length exceeded for potential SQL Injection'"
-Phát hiện các từ khóa SQL trong đầu vào
+
+4. Phát hiện các từ khóa SQL trong đầu vào
 
 SecRule ARGS "(select|union|insert|update|delete|drop|from|where|having|table|--|#|;)" \
     "id:1005,\
@@ -35,7 +37,8 @@ SecRule ARGS "(select|union|insert|update|delete|drop|from|where|having|table|--
     log,\
     status:403,\
     msg:'SQL keywords detected in input'"
-Kiểm tra các ký tự không an toàn trong URL
+
+5.Kiểm tra các ký tự không an toàn trong URL
 
 SecRule REQUEST_URI "(\%27|\%22|\'|\"|\%3D|\%3C|\%3E|--|#|;|\\|\%3B)" \
     "id:1006,\
@@ -44,14 +47,16 @@ SecRule REQUEST_URI "(\%27|\%22|\'|\"|\%3D|\%3C|\%3E|--|#|;|\\|\%3B)" \
     log,\
     status:403,\
     msg:'Unsafe characters detected in URL'"
-Phát hiện SQL Injection bằng cách kiểm tra trạng thái phản hồi
+
+6. Phát hiện SQL Injection bằng cách kiểm tra trạng thái phản hồi
 
 SecRule RESPONSE_STATUS "@streq 403" \
     "id:1007,\
     phase:3,\
     log,\
     msg:'Request denied due to SQL Injection'"
-Giới hạn số lượng tham số trong yêu cầu
+
+7. Giới hạn số lượng tham số trong yêu cầu
 
 SecRule REQUEST_METHOD "^(GET|POST)$" \
     "id:1008,\
@@ -62,8 +67,6 @@ SecRule REQUEST_METHOD "^(GET|POST)$" \
     msg:'Excessive number of parameters detected'"
 
 Hướng dẫn sử dụng quy tắc
-Thêm quy tắc vào file cấu hình: Bạn có thể thêm các quy tắc trên vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự tùy thuộc vào cấu hình server của bạn.
-
-Kiểm tra quy tắc: Sau khi thêm các quy tắc, hãy đảm bảo kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra các lỗi không mong muốn trong ứng dụng của bạn.
-
-Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.
+-    Thêm quy tắc vào file cấu hình: Bạn có thể thêm các quy tắc trên vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự tùy thuộc vào cấu hình server của bạn.
+-    Kiểm tra quy tắc: Sau khi thêm các quy tắc, hãy đảm bảo kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra các lỗi không mong muốn trong ứng dụng của bạn.
+-    Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.

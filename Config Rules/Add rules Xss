@@ -1,1 +1,91 @@
+## Các Quy Tắc XSS Cơ Bản
 
+1. Phát hiện XSS cơ bản
+
+SecRule ARGS "@detectXSS" \
+    "id:2001,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'XSS attempt detected'"
+
+2.Phát hiện ký tự đặc biệt trong tham số đầu vào
+
+SecRule ARGS "(<|>|%3C|%3E|%3Cscript|%3Ciframe|%3Cimg|%3Cstyle|%3Cbody|%3Chtml|%3Cmeta|%3Clink)" \
+    "id:2002,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential XSS detected in input'"
+
+3. Phát hiện các thẻ HTML không an toàn
+
+apache
+Sao chép mã
+SecRule ARGS "<(script|iframe|img|style|body|html|meta|link)" \
+    "id:2003,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Unsafe HTML tag detected in input'"
+4. Giới hạn kích thước đầu vào
+
+apache
+Sao chép mã
+SecRule ARGS "@length 200" \
+    "id:2004,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Input length exceeded for potential XSS'"
+
+## Các Quy Tắc XSS Nâng Cao
+
+1. Phát hiện XSS nâng cao bằng cách kiểm tra các mẫu không an toàn
+
+SecRule ARGS ".*(document\.cookie|window\.location|eval|setTimeout|setInterval|innerHTML|outerHTML|location\.href).*" \
+    "id:2005,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Advanced XSS attempt detected'"
+
+2. Phát hiện XSS trong URL
+
+SecRule REQUEST_URI "(<|>|%3C|%3E|%3Cscript|%3Ciframe|%3Cimg|%3Cstyle|%3Cbody|%3Chtml|%3Cmeta|%3Clink)" \
+    "id:2006,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Unsafe characters detected in URL'"
+
+3. Phát hiện XSS thông qua các tham số không hợp lệ
+
+SecRule QUERY_STRING ".*(<|>|%3C|%3E|%3Cscript|%3Ciframe|%3Cimg|%3Cstyle|%3Cbody|%3Chtml|%3Cmeta|%3Clink).*" \
+    "id:2007,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'XSS attempt detected in query string'"
+
+4. Phát hiện việc sử dụng các hàm JavaScript không an toàn
+
+SecRule ARGS "(document\.write|document\.writeln|alert|confirm|prompt)" \
+    "id:2008,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Unsafe JavaScript function detected in input'"
+
+Hướng dẫn sử dụng quy tắc
+-  Thêm quy tắc vào file cấu hình: Bạn có thể thêm các quy tắc trên vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự tùy thuộc vào cấu hình server của bạn.
+-  Kiểm tra quy tắc: Sau khi thêm các quy tắc, hãy đảm bảo kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra các lỗi không mong muốn trong ứng dụng của bạn.
+-  Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.

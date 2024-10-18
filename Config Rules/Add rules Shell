@@ -1,0 +1,88 @@
+##Quy Tắc Shell Cơ Bản
+
+1. Phát hiện các lệnh shell đơn giản
+
+SecRule ARGS "(cmd|exec|system|shell|sh|bash|eval|passthru|popen|proc_open|proc_close|assert|shell_exec|exec|command|url_exec)" \
+    "id:6001,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Shell command attempt detected - potentially malicious'"
+
+2. Phát hiện các ký tự đặc biệt thường dùng trong lệnh shell
+
+SecRule ARGS "[@!$&;`<>|*(){}[\]~^%]" \
+    "id:6002,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential shell injection detected - special characters found'"
+
+3. Phát hiện các ký tự escape trong các tham số
+
+SecRule ARGS "(\\\|\\\\)" \
+    "id:6003,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Shell injection attempt detected - escape character found'"
+
+4. Phát hiện các tham số có giá trị không hợp lệ hoặc bất thường
+
+SecRule ARGS ".*[;\|&].*" \
+    "id:6004,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Shell injection attempt detected - invalid command chaining'"
+
+## Quy Tắc Shell Nâng Cao
+
+1. Phát hiện các yêu cầu đến file có phần mở rộng nhạy cảm
+
+SecRule ARGS ".*\.(sh|bash|php|pl|py|jsp|asp|exe|dll)$" \
+    "id:6005,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential remote shell access - dangerous file extension'"
+
+2. Phát hiện các chuỗi có dấu .. có thể dẫn đến directory traversal
+
+SecRule ARGS ".*\.\..*" \
+    "id:6006,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential directory traversal detected - malicious file access'"
+
+3. Phát hiện các chuỗi base64 mã hóa thường được dùng trong các cuộc tấn công RCE
+
+SecRule ARGS "^(data:text/.*;base64,)" \
+    "id:6007,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential RCE attempt detected - suspicious base64 encoding'"
+
+4. Phát hiện các yêu cầu có mã độc nhúng trong các tham số
+
+SecRule ARGS ".*(eval|base64_decode|system|exec|shell_exec).*" \
+    "id:6008,\
+    phase:2,\
+    deny,\
+    log,\
+    status:403,\
+    msg:'Potential remote code execution detected - malicious input'"
+
+Hướng dẫn sử dụng quy tắc
+-  Thêm quy tắc vào file cấu hình: Bạn có thể thêm các quy tắc này vào file cấu hình ModSecurity của bạn, thường nằm ở /etc/nginx/modsec/main.conf hoặc một vị trí tương tự.
+-  Kiểm tra quy tắc: Sau khi thêm quy tắc, hãy đảm bảo kiểm tra để xác minh rằng ModSecurity đang hoạt động như mong đợi và không gây ra các lỗi không mong muốn trong ứng dụng của bạn.
+-  Giám sát và điều chỉnh: Theo dõi các bản ghi để xem có phải các quy tắc này chặn các yêu cầu hợp lệ hay không, và điều chỉnh chúng nếu cần thiết.

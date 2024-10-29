@@ -1,0 +1,67 @@
+##1. SQL Injection (SQLi)
+
+# Phát hiện các từ khóa SQL Injection và ký tự đặc biệt
+SecRule ARGS "(?i:(select|union|insert|update|delete|drop|--|;|\x27|\x22|\x2d\x2d|\x23|\x60))" \
+    "id:1001,phase:2,deny,status:403,msg:'SQL Injection Detected'"
+
+# Phát hiện các kiểu mã hóa hex, base64 hoặc URL Encoding
+SecRule ARGS "(%27|%22|%3B|%3D|%2D%2D|%23|%60|%20union%20|%20select%20)" \
+    "id:1002,phase:2,deny,status:403,msg:'Encoded SQL Injection Attempt'"
+##2. Cross-Site Scripting (XSS)
+
+# Phát hiện các thẻ HTML và từ khóa liên quan đến XSS
+SecRule ARGS "(?i:(<script>|<img|onerror|onload|alert|javascript:|vbscript:|document\.cookie|eval\())" \
+    "id:2001,phase:2,deny,status:403,msg:'XSS Detected'"
+
+# Phát hiện mã hóa base64, URL encoding hoặc hex để làm rối mã
+SecRule ARGS "((%3C|%3E|%22|%27|%28|%29|%3B|%3D|%2F|%5C|%25[0-9a-fA-F]{2}){3,})" \
+    "id:2002,phase:2,deny,status:403,msg:'Encoded XSS Attack Detected'"
+##3. Path Traversal
+
+# Phát hiện các chuỗi Path Traversal
+SecRule ARGS "(?i:\.\./|\.\.\\|%2e%2e%2f|%2e%2e\\|%2e%2e%5c)" \
+    "id:3001,phase:2,deny,status:403,msg:'Path Traversal Detected'"
+
+# Kiểm tra các ký tự hoặc chuỗi phân mảnh mã hóa liên quan
+SecRule ARGS "(%00|%2e%2e%2f|%2f%2e%2e|%2fetc|%5c%2e%2e)" \
+    "id:3002,phase:2,deny,status:403,msg:'Encoded Path Traversal Detected'"
+
+##4. Command Injection
+
+# Phát hiện các ký tự đặc biệt hoặc từ khóa phổ biến trong Command Injection
+SecRule ARGS "(?i:(;|\||&|\$|\`|>|<|cat|echo|uname|curl|wget|/bin/sh|/bin/bash))" \
+    "id:4001,phase:2,deny,status:403,msg:'Command Injection Detected'"
+
+# Phát hiện mã hóa base64, hex hoặc URL encoding để làm rối mã
+SecRule ARGS "((%3B|%7C|%26|%24|%60|%3E|%3C){2,})" \
+    "id:4002,phase:2,deny,status:403,msg:'Encoded Command Injection Detected'"
+
+##5. Cross-Site Request Forgery (CSRF)
+
+# Kiểm tra sự tồn tại của CSRF token trong các yêu cầu POST, PUT, DELETE
+SecRule REQUEST_METHOD "(POST|PUT|DELETE)" "chain,id:5001,phase:2,deny,status:403,msg:'CSRF Token Missing'"
+SecRule &ARGS:csrf_token "@eq 0" "t:none"
+
+# Phát hiện mã hóa lạ trong CSRF token (tránh bypass qua làm rối mã)
+SecRule ARGS:csrf_token "(?i:(%2F|%3D|%2B|%3C|%3E|%25[0-9a-fA-F]{2}))" \
+    "id:5002,phase:2,deny,status:403,msg:'Encoded CSRF Token Detected'"
+
+##6. Server-Side Request Forgery (SSRF)
+
+# Chặn các yêu cầu chứa IP nội bộ hoặc các tên miền không tin cậy
+SecRule ARGS "(?i:(127\.0\.0\.1|localhost|169\.254|10\.|172\.(1[6-9]|2[0-9]|3[0-1])|192\.168))" \
+    "id:6001,phase:2,deny,status:403,msg:'SSRF Attempt Detected'"
+
+# Chặn các payload mã hóa có dấu hiệu phân mảnh hoặc làm rối mã
+SecRule ARGS "(%2e%2e|%2f|%5c|%3f)" \
+    "id:6002,phase:2,deny,status:403,msg:'Encoded SSRF Attempt Detected'"
+
+##7. File Upload
+
+# Kiểm tra các file upload có phần mở rộng nguy hiểm
+SecRule REQUEST_FILENAME "\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|aspx|htaccess)$" \
+    "id:7001,phase:2,deny,status:403,msg:'Forbidden File Extension in Upload Detected'"
+
+# Phát hiện payload mã hóa base64, hex trong nội dung file upload để phát hiện mã độc
+SecRule FILES "(?i:(%2F|%3D|%2B|%00|%25[0-9a-fA-F]{2}){4,})" \
+    "id:7002,phase:2,deny,status:403,msg:'Encoded Payload in File Upload Detected'"

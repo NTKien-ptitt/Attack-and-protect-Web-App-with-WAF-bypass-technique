@@ -96,8 +96,10 @@ sudo systemctl restart nginx
 
 ## Bước 6: Cấu hình rule để bảo vệ website
 
-Truy cập đến dường dẫn `/etc/nginx/modsec/main.conf`
-Thêm các rule vào trong file `main.conf`
+Truy cập đến dường dẫn `/etc/nginx/modsec/main.conf`.
+
+thêm các rule vào trong file `main.conf`.
+
 Khởi động lại hệ thống
 ```bash
 systemctl restart nginx

@@ -6,6 +6,7 @@
 Chạy các lệnh sau để cài đặt các gói cần thiết:
 
 ```bash
+sudo apt install nginx
 sudo apt update
 sudo apt install git build-essential libtool libpcre3-dev libssl-dev zlib1g-dev wget
 ```

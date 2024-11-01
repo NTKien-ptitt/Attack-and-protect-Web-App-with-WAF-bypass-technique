@@ -31,6 +31,7 @@ sudo make install
 Clone ModSecurity-nginx từ GitHub:
 ```bash
 git clone https://github.com/owasp-modsecurity/ModSecurity-nginx
+cd ModSecurity-nginx
 ```
 Cấu hình Nginx với ModSecurity:
 ```bash

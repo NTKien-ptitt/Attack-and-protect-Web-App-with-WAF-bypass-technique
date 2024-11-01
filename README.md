@@ -26,15 +26,16 @@ Xây dựng và cài đặt ModSecurity:
 make
 sudo make install
 ```
-Cấu hình Nginx với ModSecurity:
-```bash
-./configure --with-compat --add-dynamic-module=../ModSecurity-nginx
-make modules
-```
+
 ## Bước 3: Tải và cài đặt ModSecurity Nginx Connector
 Clone ModSecurity-nginx từ GitHub:
 ```bash
 git clone https://github.com/owasp-modsecurity/ModSecurity-nginx
+```
+Cấu hình Nginx với ModSecurity:
+```bash
+./configure --with-compat --add-dynamic-module=../ModSecurity-nginx
+make modules
 ```
 ## Bước 4: Tải và biên dịch phiên bản Nginx phù hợp với ModSecurity
 ```bash

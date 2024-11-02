@@ -107,7 +107,11 @@ systemctl restart nginx
 
 
 
-## Tài liệu tham khảo
+##  tham khảo
 
-1. [Attack and Protect Web App with WAF Bypass Technique - Config Rules](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Config%20Rules/README.MD)
-2. []()
+1. [Hướng dẫn cấu hình quy tắc WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Config%20Rules/README.MD)
+   
+
+2. [Tải trọng vượt qua WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Bypass%20Payload%20WAF/README.MD)
+   
+

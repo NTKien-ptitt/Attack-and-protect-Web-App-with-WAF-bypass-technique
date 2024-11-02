@@ -6,7 +6,7 @@
 - [Bước 5: Cấu hình Nginx để sử dụng ModSecurity](#bước-5-cấu-hình-nginx-để-sử-dụng-modsecurity)
 - [Bước 5: Cấu hình Nginx để sử dụng ModSecurity](#bước-5-cấu-hình-nginx-để-sử-dụng-modsecurity)
 - [Bước 6: Cấu hình rule để bảo vệ website](#bước-6-cấu-hình-rule-để-bảo-vệ-website)
-- [7 Tham khảo](#Tham-khảo)
+- [Tham khảo](#Tham-khảo)
 
 ## Bước 1: Cài đặt các gói cần thiết
 

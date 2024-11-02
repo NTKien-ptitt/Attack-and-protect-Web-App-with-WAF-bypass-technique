@@ -27,8 +27,8 @@ Dưới đây là một ví dụ đơn giản về quy tắc ModSecurity để c
 ```plaintext
 SecRule ARGS "cmd=" "id:1001,phase:2,deny,status:403,msg:'Command Injection detected'"
 ```
-`SecRule ARGS "cmd="`: Quy tắc này sẽ kiểm tra xem các tham số của yêu cầu có chứa chuỗi "cmd=" hay không. Nếu chuỗi này tồn tại, quy tắc sẽ được kích hoạt.
-`id:1001`: Mỗi quy tắc ModSecurity cần có một ID duy nhất để phân biệt. Ở đây, ID của quy tắc là 1001.
-`phase:2`: Quy tắc sẽ thực thi trong phase 2, tức là trong quá trình xử lý dữ liệu của yêu cầu HTTP.
-`deny, status:403`: Từ chối yêu cầu và trả về mã trạng thái 403 (Forbidden).
-`msg`:'Command Injection detected': Ghi lại thông báo 'Command Injection detected' vào nhật ký để dễ dàng theo dõi.
+- `SecRule ARGS "cmd="`: Quy tắc này sẽ kiểm tra xem các tham số của yêu cầu có chứa chuỗi "cmd=" hay không. Nếu chuỗi này tồn tại, quy tắc sẽ được kích hoạt.
+- `id:1001`: Mỗi quy tắc ModSecurity cần có một ID duy nhất để phân biệt. Ở đây, ID của quy tắc là 1001.
+- `phase:2`: Quy tắc sẽ thực thi trong phase 2, tức là trong quá trình xử lý dữ liệu của yêu cầu HTTP.
+- `deny, status:403`: Từ chối yêu cầu và trả về mã trạng thái 403 (Forbidden).
+- `msg`:'Command Injection detected': Ghi lại thông báo 'Command Injection detected' vào nhật ký để dễ dàng theo dõi.

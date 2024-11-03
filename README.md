@@ -6,7 +6,12 @@
 - [Bước 5: Cấu hình Nginx để sử dụng ModSecurity](#bước-5-cấu-hình-nginx-để-sử-dụng-modsecurity)
 - [Bước 5: Cấu hình Nginx để sử dụng ModSecurity](#bước-5-cấu-hình-nginx-để-sử-dụng-modsecurity)
 - [Bước 6: Cấu hình rule để bảo vệ website](#bước-6-cấu-hình-rule-để-bảo-vệ-website)
-- [Tham khảo](#Tham-khảo)
+
+
+1. [Hướng dẫn cấu hình quy tắc WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Config%20Rules/README.MD)
+   
+2. [Tải trọng vượt qua WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Bypass%20Payload%20WAF/README.MD)
+   
 
 ## Bước 1: Cài đặt các gói cần thiết
 
@@ -109,8 +114,4 @@ systemctl restart nginx
 
 # Tham khảo
 
-1. [Hướng dẫn cấu hình quy tắc WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Config%20Rules/README.MD)
-   
-2. [Tải trọng vượt qua WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Bypass%20Payload%20WAF/README.MD)
-   
 

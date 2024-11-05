@@ -1,4 +1,9 @@
 @
+system
+system/config
+system/config.php
+config
+config.php
 _
 robots.txt
 Robots.txt

@@ -48,11 +48,7 @@ Clone ModSecurity-nginx từ GitHub:
 git clone https://github.com/owasp-modsecurity/ModSecurity-nginx
 cd ModSecurity-nginx
 ```
-Cấu hình Nginx với ModSecurity:
-```bash
-./configure --with-compat --add-dynamic-module=../ModSecurity-nginx
-make modules
-```
+
 ## Bước 4: Tải và biên dịch phiên bản Nginx phù hợp với ModSecurity
 ```bash
 nginx -v
@@ -63,7 +59,11 @@ wget http://nginx.org/download/nginx-1.18.0.tar.gz
 tar -zxvf nginx-1.18.0.tar.gz
 cd nginx-1.18.0
 ```
-
+Cấu hình Nginx với ModSecurity:
+```bash
+./configure --with-compat --add-dynamic-module=../ModSecurity-nginx
+make modules
+```
 Biên dịch và cài đặt Nginx:
 ```bash
 make

@@ -11,7 +11,7 @@
 ---
 
 ## **Hướng dẫn sử dụng**
-1. **Cài đặt yêu cầu**:
+1. **Sử dụng trên môi trường Linux**:
    - Clone kho lưu trữ:
      ```bash
       git clone https://github.com/nazmul-ethi/Bypass-Four03.git

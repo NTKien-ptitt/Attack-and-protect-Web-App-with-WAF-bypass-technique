@@ -1,6 +1,8 @@
-Kho lưu trữ [Bypass-Four03](https://github.com/nazmul-ethi/Bypass-Four03) có thể là một công cụ hỗ trợ bypass mã lỗi **HTTP 403 (Forbidden)**. HTTP 403 thường xuất hiện khi máy chủ từ chối truy cập vào một tài nguyên cụ thể do không có quyền hoặc chính sách bảo mật chặn truy cập.
+# Kho lưu trữ [Bypass-Four03](https://github.com/nazmul-ethi/Bypass-Four03) 
+- Là một công cụ hỗ trợ bypass mã lỗi **HTTP 403 (Forbidden)**.
+- HTTP 403 thường xuất hiện khi máy chủ từ chối truy cập vào một tài nguyên cụ thể do không có quyền hoặc chính sách bảo mật chặn truy cập.
 
-### **Cách hoạt động của công cụ Bypass-Four03**
+## **Cách hoạt động của công cụ Bypass-Four03**
 1. **Thay đổi User-Agent**: Máy chủ đôi khi chặn truy cập dựa trên User-Agent. Bằng cách thay đổi User-Agent, ta có thể đánh lừa máy chủ rằng yêu cầu đến từ một trình duyệt hoặc bot khác.
 2. **Thêm/Chỉnh sửa Header**: Một số trường hợp, việc thêm hoặc sửa đổi các header như `X-Forwarded-For` hoặc `Referer` có thể đánh lừa máy chủ cấp quyền.
 3. **Sử dụng Encoding hoặc Obfuscation**: Một số payload được mã hóa hoặc làm mờ (obfuscated) có thể giúp vượt qua cơ chế bảo vệ.
@@ -8,7 +10,7 @@ Kho lưu trữ [Bypass-Four03](https://github.com/nazmul-ethi/Bypass-Four03) có
 
 ---
 
-### **Hướng dẫn sử dụng**
+## **Hướng dẫn sử dụng**
 1. **Cài đặt yêu cầu**:
    - Clone kho lưu trữ:
      ```bash

@@ -12,21 +12,20 @@ Kho lưu trữ [Bypass-Four03](https://github.com/nazmul-ethi/Bypass-Four03) có
 1. **Cài đặt yêu cầu**:
    - Clone kho lưu trữ:
      ```bash
-git clone https://github.com/nazmul-ethi/Bypass-Four03.git
-cd Bypass-Four03/
-sudo chmod +x bypass-Four03.sh
-
-sudo apt install curl jq figlet
+      git clone https://github.com/nazmul-ethi/Bypass-Four03.git
+      cd Bypass-Four03/
+      sudo chmod +x bypass-Four03.sh
+      sudo apt install curl jq figlet
      ```
 
 2. **Chạy công cụ**:
    Ví dụ: kiểm tra URL bị chặn 403
    ```bash
-   Usage: ./bypass-Four03.sh [URL] [path]
+   ./bypass-Four03.sh [URL] [path]
 
-./bypass-Four03.sh https://example.com admin
-./bypass-Four03.sh https://example.com admin/index.php
-./bypass-Four03.sh https://example.com server-status
+   ./bypass-Four03.sh https://example.com admin
+   ./bypass-Four03.sh https://example.com admin/index.php
+   ./bypass-Four03.sh https://example.com server-status
 
 Options:
   -h, --help    Show this help menu

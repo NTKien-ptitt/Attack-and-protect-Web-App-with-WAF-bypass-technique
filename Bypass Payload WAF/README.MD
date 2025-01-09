@@ -10,7 +10,7 @@ WAF thường phân tích các yêu cầu HTTP và phản hồi từ máy chủ,
 Kẻ tấn công có thể mã hóa các ký tự độc hại trong yêu cầu để WAF không nhận diện được.
 Ví dụ: Sử dụng URL encoding để biến % thành %25, hoặc sử dụng Base64 encoding cho các payload độc hại.
 Kỹ thuật thực hiện: Nếu yêu cầu gốc là `http://example.com/?input=<script>`, kẻ tấn công có thể mã hóa như sau:
-```bash
+```html
 http://example.com/?input=%3Cscript%3E
 ```
 

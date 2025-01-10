@@ -13,9 +13,10 @@
 2. [Tải trọng vượt qua WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Bypass%20Payload%20WAF/README.MD)
 
 ---
-# MÔ HÌNH
+# MÔ HÌNH BYPASS
 ![bypass](https://github.com/user-attachments/assets/19e43a27-1840-479f-97f4-a14294838b28)
 ---
+# MÔ HÌNH DEFENSE
 ![defen](https://github.com/user-attachments/assets/c45a0fda-2434-4862-987b-00cc30eaa2a1)
 
 ---

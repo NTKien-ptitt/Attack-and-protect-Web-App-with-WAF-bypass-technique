@@ -11,7 +11,14 @@
 1. [Hướng dẫn cấu hình quy tắc WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Config%20Rules/README.MD)
    
 2. [Tải trọng vượt qua WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Bypass%20Payload%20WAF/README.MD)
-   
+
+---
+# MÔ HÌNH
+![bypass](https://github.com/user-attachments/assets/19e43a27-1840-479f-97f4-a14294838b28)
+---
+![defen](https://github.com/user-attachments/assets/c45a0fda-2434-4862-987b-00cc30eaa2a1)
+
+---
 
 ## Bước 1: Cài đặt các gói cần thiết
 

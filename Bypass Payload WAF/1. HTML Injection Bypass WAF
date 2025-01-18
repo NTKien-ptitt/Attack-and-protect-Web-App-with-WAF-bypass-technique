@@ -1,1 +1,185 @@
+&lt;plaintext&gt;
+<plAintext>
+%3Cplaintext%3E
+%3C%70%6C%61%69%6E%74%65%78%74%3E
+%3Cplaintext%2F%3E
+%3Cplaintext%20%3E
+%3Cplaintext%09%3E
+%3Cplaintext%0A%3E
+%3Cplaintext%0D%3E
+&lt;plaintext&gt;
+&lt;plaintext/&gt;
+&lt;plaintext %20&gt;
+&lt;plaintext %0A&gt;
+&lt;plaintext %0D&gt;
+<\u0070laintext>
+<\u0070\u006C\u0061\u0069\u006E\u0074\u0065\u0078\u0074>
+PDxwbGFpbnRleHQ+
+PDxQTEFJTlRFWFQ+
+%253Cplaintext%253E
+%26lt%3Bplaintext%26gt%3B
+decodeURIComponent("%3Cplaintext%3E")
+unescape("%3Cplaintext%3E")
+String.fromCharCode(60,112,108,97,105,110,116,101,120,116,62)
+%3Cplaintext%0A%2F%3E
+&lt;plaintext%20/&gt;
+%3Cplaintext%20%0A%2F%3E
+%3Cplaintext%5C%2F%3E
+%3Cplaintext%252F%3E
+<plaintext><script>alert(1)</script>
+<plaintext %00><script>alert(1)</script>
+<plaintext %20><script>alert(1)</script>
+<plaintext %0A><script>alert(1)</script>
+<plaintext %09><script>alert(1)</script>
+<plaintext onmouseover="alert(1)">Move mouse here
+<plaintext>
+<plAintext>
+<Plaintext>
+<PLAINtext>
+<xmp>
+<plAintext>
+%3Cxmp%3E
+%3C%78%6D%70%3E
+%3Cxmp%2F%3E
+%3Cxmp%20%3E
+%3Cxmp%09%3E
+%3Cxmp%0A%3E
+%3Cxmp%0D%3E
+&lt;xmp&gt;
+&lt;xmp/&gt;
+&lt;xmp%20&gt;
+&lt;xmp%20%0A&gt;
+&lt;xmp%0D&gt;
+<\u0078mp>
+<\u0078\u006D\u0070>
+PDxwbGFpbnRleHQ+
+PDxQTEFJTlRFWFQ+
+%253Cxmp%253E
+%26lt%3Bxmp%26gt%3B
+decodeURIComponent("%3Cxmp%3E")
+unescape("%3Cxmp%3E")
+String.fromCharCode(60,120,109,112,62)
+%3Cxmp%0A%2F%3E
+&lt;xmp%20/&gt;
+%3Cxmp%20%0A%2F%3E
+%3Cxmp%5C%2F%3E
+%3Cxmp%252F%3E
+<xmp><script>alert(1)</script>
+<xmp %00><script>alert(1)</script>
+<xmp %20><script>alert(1)</script>
+<xmp %0A><script>alert(1)</script>
+<xmp %09><script>alert(1)</script>
+<xmp onmouseover="alert(1)">Move mouse here
+<xmp>
+<plAintext>
+<Plaintext>
+<PLAINtext>
+<xmp%00>
+<xmp%20>
+<xmp%09>
+<xmp%0A>
+<xmp%0D>
+<xmp%2F%2A%2A%2F>
+<xmp/ondblclick>
+<xmp onmouseover>
+<xmp onclick>
+<xmp%2E>
+<xmp%2C>
+<xmp%3B>
+<xmp%3A>
+<xmp%3D>
+<xmp%26>
+<xmp%23>
+<xmp%2B>
+<xmp%7E>
+<xmp%24>
+<xmp%5E>
+<xmp%25>
+<xmp%40>
+<xmp%28>
+<xmp%29>
+<xmp%5B>
+<xmp%5D>
+<xmp%7B>
+<xmp%7D>
+<xmp%5C>
+<xmp%7C>
+<xmp%22>
+<xmp%27>
+<xmp%60>
+<xmp%3C>
+<xmp%3E>
+<xmp/
+<xmp\
+<xmp//
+<xmp//
+<xmp//test>
+<xmp#>
+<xmp?>
+<xmp!>
+<xmp->
+<xmp-->
+<xmp---
+<xmp<space>>
+<xmp
+<xmp/>
+<xmp\>
+</xmp>
+</xmp>
+</xmp/>
+</xmp\>
+<plaintext%00>
+<plaintext%20>
+<plaintext%09>
+<plaintext%0A>
+<plaintext%0D>
+<plaintext%2F%2A%2A%2F>
+<plaintext/ondblclick>
+<plaintext onmouseover>
+<plaintext onclick>
+<plaintext%2E>
+<plaintext%2C>
+<plaintext%3B>
+<plaintext%3A>
+<plaintext%3D>
+<plaintext%26>
+<plaintext%23>
+<plaintext%2B>
+<plaintext%7E>
+<plaintext%24>
+<plaintext%5E>
+<plaintext%25>
+<plaintext%40>
+<plaintext%28>
+<plaintext%29>
+<plaintext%5B>
+<plaintext%5D>
+<plaintext%7B>
+<plaintext%7D>
+<plaintext%5C>
+<plaintext%7C>
+<plaintext%22>
+<plaintext%27>
+<plaintext%60>
+<plaintext%3C>
+<plaintext%3E>
+<plaintext/
+<plaintext\
+<plaintext//
+<plaintext//
+<plaintext//test>
+<plaintext#>
+<plaintext?>
+<plaintext!>
+<plaintext->
+<plaintext-->
+<plaintext---
+<plaintext<space>>
+<plaintext
+<plaintext/>
+<plaintext\>
+</plaintext>
+</plaintext>
+</plaintext/>
+</plaintext\>
 

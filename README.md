@@ -9,7 +9,7 @@
 |  |  | Bước 4: Tải và biên dịch phiên bản Nginx phù hợp với ModSecurity | [Bước 4: Tải và biên dịch phiên bản Nginx phù hợp với ModSecurity](#bước-4-tải-và-biên-dịch-phiên-bản-nginx-phù-hợp-với-modsecurity) |
 |  |  | Bước 5: Cấu hình Nginx để sử dụng ModSecurity | [Bước 5: Cấu hình Nginx để sử dụng ModSecurity](#bước-5-cấu-hình-nginx-để-sử-dụng-modsecurity) |
 |  |  | Bước 6: Cấu hình rule để bảo vệ website | [Bước 6: Cấu hình rule để bảo vệ website](#bước-6-cấu-hình-rule-để-bảo-vệ-website) |
-| **2** | **Tải trọng Bypass và cấu hình Rules** | 1. Hướng dẫn cấu hình quy tắc WAF | [Hướng dẫn cấu hình quy tắc WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Config%20Rules/README.MD) |
+| **2** | **Tải trọng Bypass và cấu hình Rules** | 1. Hướng dẫn cấu hình quy tắc WAF ModSecurity | [Hướng dẫn cấu hình quy tắc WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Config%20Rules/README.MD) |
 |  |  | 2. Tải trọng vượt qua WAF | [Tải trọng vượt qua WAF](https://github.com/NTKien-ptitt/Attack-and-protect-Web-App-with-WAF-bypass-technique/blob/main/Bypass%20Payload%20WAF/README.MD) |
 
 

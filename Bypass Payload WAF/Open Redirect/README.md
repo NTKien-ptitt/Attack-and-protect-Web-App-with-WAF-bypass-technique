@@ -43,20 +43,29 @@ Nạn nhân nhấp vào liên kết tin rằng họ sẽ đến "example.com", n
 
 ---
 
-### **Phòng chống Open Redirect:**
+1. **Sử dụng ký tự `\` (dấu gạch chéo ngược):**
+   - Thay vì sử dụng `//`, bạn có thể thử sử dụng `\` để bypass bộ lọc.
+   - **Ví dụ:** `https:\evil.com`
 
-1. **Kiểm tra và giới hạn URL đích:**
-   - Chỉ cho phép chuyển hướng đến các URL nằm trong danh sách trắng (whitelist).
-   - Không cho phép sử dụng các URL bên ngoài.
+2. **Sử dụng ký tự `%23` (mã hóa của `#`):**
+   - Nếu bộ lọc chặn ký tự `#`, bạn có thể sử dụng `%23` để thay thế.
+   - **Ví dụ:** `https://example.com?redirect=evil.com%23example.com`
 
-2. **Sử dụng mã hóa hoặc token:**
-   - Thay vì URL trực tiếp, sử dụng các giá trị mã hóa để chỉ định trang đích.
+3. **Sử dụng ký tự `%2e` (mã hóa của `.`):**
+   - Thay thế dấu chấm `.` bằng `%2e` để bypass bộ lọc.
+   - **Ví dụ:** `https://example.com?redirect=example%2ecom%2eevil.com`
 
-3. **Hiển thị cảnh báo:** 
-   - Thông báo rõ ràng cho người dùng trước khi chuyển hướng họ đến một trang web bên ngoài.
+4. **Sử dụng ký tự `%40` (mã hóa của `@`):**
+   - Sử dụng `%40` để thay thế ký tự `@` trong URL.
+   - **Ví dụ:** `https://example.com?redirect=example.com%40evil.com`
 
-4. **Kiểm tra đầu vào người dùng:**
-   - Lọc và xác thực các tham số URL trước khi sử dụng.
+5. **Sử dụng ký tự `°`:**
+   - Chèn ký tự `°` vào URL để bypass bộ lọc.
+   - **Ví dụ:** `https://example.com?redirect=example.com/°evil.com`
+
+6. **Sử dụng ký tự `%0d` hoặc `%0a` (mã hóa của ký tự xuống dòng):**
+   - Chèn các ký tự này vào URL để bypass bộ lọc.
+   - **Ví dụ:** `https://example.com?redirect=/%0d/evil.com`
 
 ---
 

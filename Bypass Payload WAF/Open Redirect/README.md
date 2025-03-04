@@ -14,8 +14,14 @@
    ```
    https://example.com/redirect?url=https://malicious-site.com
    ```
+   hoac
+   ```
 
-3. Khi nạn nhân nhấp vào liên kết, họ sẽ bị chuyển hướng đến trang web của kẻ tấn công.
+   https://example.com/%00/malicious-site.com
+   
+   ```
+
+4. Khi nạn nhân nhấp vào liên kết, họ sẽ bị chuyển hướng đến trang web của kẻ tấn công.
 
 ---
 

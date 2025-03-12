@@ -1,4 +1,7 @@
+private_keys.json
 .babelrc.json
+username.json
+members.json
 .codeclimate.json
 .commitlintrc.json
 .czrc.json
@@ -6,9 +9,18 @@
 .huskyrc.json
 .jestrc.json
 .lintstagedrc.json
+api_keys.json
+secrets.json
+passwd.json
+password.json
+auth.json
+home.json
+key.json
+test.json
 .postcssrc.json
 .prettierrc.json
 .releaserc.json
+profiles.json
 .serverless.json
 .stylelintrc.json
 .swcrc.json
@@ -66,32 +78,32 @@ vue.config.json
 .commitlintrc.json
 .czrc.json
 .dockerignore.json
-.env.local.json (Nhạy cảm)
-.env.production.json (Nhạy cảm)
-.env.staging.json (Nhạy cảm)
+.env.local.json 
+.env.production.json 
+.env.staging.json 
 .eslintrc.json
-.firebaserc.json (Nhạy cảm)
-.gitlab-ci.json (Nhạy cảm)
+.firebaserc.json 
+.gitlab-ci.json 
 .huskyrc.json
 .jestrc.json
 .lintstagedrc.json
-.npmrc.json (Nhạy cảm)
+.npmrc.json 
 .postcssrc.json
 .prettierrc.json
 .releaserc.json
 .serverless.json
 .stylelintrc.json
 .swcrc.json
-.vscode/settings.json (Nhạy cảm)
-access.json (Nhạy cảm)
+.vscode/settings.json
+access.json 
 account.json
 accounts.json
 admin.json
 angular.json
 api.json
-audit.json (Tiết lộ)
-auth.json (Nhạy cảm)
-aws.json (Nhạy cảm)
+audit.json 
+auth.json 
+aws.json 
 backup.json
 build.json
 cache.json
@@ -100,51 +112,53 @@ carts.json
 clients.json
 composer.json
 config.json
-credentials.json (Nhạy cảm)
+credentials.json 
 customer.json
 data.json
 database.json
 databases.json
-debug.json (Tiết lộ)
-deployment.json (Nhạy cảm)
-docker-compose.json (Nhạy cảm)
-dump.json (Tiết lộ)
-environment.json (Nhạy cảm)
-env.json (Nhạy cảm)
+debug.json
+deployment.json 
+docker-compose.json 
+dump.json 
+environment.json 
+env.json 
 errors.json
 events.json
-export.json (Tiết lộ)
+export.json 
 gruntfile.json
 gulpfile.json
 history.json
 index.json
 init.json
-keys.json (Nhạy cảm)
+keys.json
 logs.json
 manifest.json
 messages.json
 metadata.json
 migrations.json
-nuxt.config.json (Nhạy cảm)
+nuxt.config.json 
 orders.json
 package-lock.json
 package.json
-passwords.json (Nhạy cảm)
+passwords.json
 permissions.json
 products.json
 profile.json
 routes.json
+wishlist.json
 schema.json
-secrets.json (Nhạy cảm)
-security.json (Nhạy cảm)
-server.json (Tiết lộ)
-service-account.json (Nhạy cảm)
+secrets.json 
+security.json 
+server.json 
+addresses.json
+service-account.json 
 settings.json
 stats.json
 test.json
 themes.json
-tokens.json (Nhạy cảm)
-trace.json (Tiết lộ)
+tokens.json 
+trace.json 
 translations.json
 tsconfig.json
 user.json

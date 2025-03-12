@@ -61,3 +61,93 @@ tsconfig.json
 user.json
 users.json
 vue.config.json
+.babelrc.json
+.codeclimate.json
+.commitlintrc.json
+.czrc.json
+.dockerignore.json
+.env.local.json (Nhạy cảm)
+.env.production.json (Nhạy cảm)
+.env.staging.json (Nhạy cảm)
+.eslintrc.json
+.firebaserc.json (Nhạy cảm)
+.gitlab-ci.json (Nhạy cảm)
+.huskyrc.json
+.jestrc.json
+.lintstagedrc.json
+.npmrc.json (Nhạy cảm)
+.postcssrc.json
+.prettierrc.json
+.releaserc.json
+.serverless.json
+.stylelintrc.json
+.swcrc.json
+.vscode/settings.json (Nhạy cảm)
+access.json (Nhạy cảm)
+account.json
+accounts.json
+admin.json
+angular.json
+api.json
+audit.json (Tiết lộ)
+auth.json (Nhạy cảm)
+aws.json (Nhạy cảm)
+backup.json
+build.json
+cache.json
+cart.json
+carts.json
+clients.json
+composer.json
+config.json
+credentials.json (Nhạy cảm)
+customer.json
+data.json
+database.json
+databases.json
+debug.json (Tiết lộ)
+deployment.json (Nhạy cảm)
+docker-compose.json (Nhạy cảm)
+dump.json (Tiết lộ)
+environment.json (Nhạy cảm)
+env.json (Nhạy cảm)
+errors.json
+events.json
+export.json (Tiết lộ)
+gruntfile.json
+gulpfile.json
+history.json
+index.json
+init.json
+keys.json (Nhạy cảm)
+logs.json
+manifest.json
+messages.json
+metadata.json
+migrations.json
+nuxt.config.json (Nhạy cảm)
+orders.json
+package-lock.json
+package.json
+passwords.json (Nhạy cảm)
+permissions.json
+products.json
+profile.json
+routes.json
+schema.json
+secrets.json (Nhạy cảm)
+security.json (Nhạy cảm)
+server.json (Tiết lộ)
+service-account.json (Nhạy cảm)
+settings.json
+stats.json
+test.json
+themes.json
+tokens.json (Nhạy cảm)
+trace.json (Tiết lộ)
+translations.json
+tsconfig.json
+user.json
+users.json
+vue.config.json
+webpack.config.json

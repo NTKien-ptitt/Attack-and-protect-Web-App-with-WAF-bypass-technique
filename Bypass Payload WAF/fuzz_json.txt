@@ -151,3 +151,8 @@ user.json
 users.json
 vue.config.json
 webpack.config.json
+main.json
+name.json
+server.json
+control.json
+security.json

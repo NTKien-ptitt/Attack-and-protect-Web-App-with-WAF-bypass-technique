@@ -12293,7 +12293,6 @@ aspincludes
 asplogin
 aspnet
 aspnet-client
-aspnet_client
 aspnet_client/
 aspnet_clients
 aspnet_files/
@@ -17052,7 +17051,6 @@ kucoin.zip
 upbit.zip
 bitstamp.zip
 gateio.zip
-
 controlpanel.asp
 controlpanel.aspx
 controlpanel.cfm
@@ -19883,10 +19881,6 @@ ex1
 ex2
 exam
 examadmin
-example
-example.
-example.com/%2e%2e
-example.com/%2f%2e%2e
 example.com/..;/css
 example.com/..;/docs
 example.com/..;/docs/appdev

